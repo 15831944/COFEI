@@ -1,0 +1,12 @@
+#ifndef SMTCOMMLIB_GLOBAL_H
+#define SMTCOMMLIB_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(SMTCOMMLIB_LIBRARY)
+#  define SMTCOMMLIBSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define SMTCOMMLIBSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // SMTCOMMLIB_GLOBAL_H

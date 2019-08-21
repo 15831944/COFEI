@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/headerButtonFoldOver_XPBlue1.png</file>
+        <file>images/headerButtonFoldOver_XPBlue2.png</file>
+        <file>images/headerButtonFold_XPBlue1.png</file>
+        <file>images/headerButtonFold_XPBlue2.png</file>
+        <file>images/headerButtonUnfoldOver_XPBlue1.png</file>
+        <file>images/headerButtonUnfoldOver_XPBlue2.png</file>
+        <file>images/headerButtonUnfold_XPBlue1.png</file>
+        <file>images/headerButtonUnfold_XPBlue2.png</file>
+        <file>images/headerButtonFold_Vista1.png</file>
+        <file>images/headerButtonUnfold_Vista1.png</file>
+        <file>images/headerButtonFold.png</file>
+        <file>images/headerButtonFoldOver.png</file>
+        <file>images/headerButtonUnfold.png</file>
+        <file>images/headerButtonUnfoldOver.png</file>
+        <file>images/headerButtonFoldOver_Vista1.png</file>
+        <file>images/headerButtonUnfoldOver_Vista1.png</file>
+        <file>images/unFix.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<data>
+
+	<硬件配置>
+		<网口配置>
+	    		<网口名称>enp2s0</网口名称>
+		</网口配置>
+		<串口配置>
+			<串口编号 ID = "1">
+				<端口名>/dev/tty8</端口名>
+				<波特率>115200</波特率>
+                                <头尾设置>LF;0B</头尾设置><!--头尾设置默认不填写为空,头尾分割以;符号分割-->
+			</串口编号>
+			<串口编号 ID = "2">
+				<端口名>/dev/tty9</端口名>
+				<波特率>115200</波特率>
+                                <头尾设置></头尾设置>
+			</串口编号>
+		</串口配置>
+		<网络配置>
+			<网络编号 ID = "1">
+				<协议类型>TCP</协议类型>
+				<服务类型>服务器</服务类型>
+				<IP地址>127.0.0.1</IP地址>
+				<端口号>8800</端口号>
+			</网络编号>
+			<网络编号 ID = "2">
+				<协议类型>TCP</协议类型>
+				<服务类型>服务器</服务类型>
+				<IP地址>127.0.0.1</IP地址>
+				<端口号>8800</端口号>
+			</网络编号>
+		</网络配置>
+		<WEB配置>
+			<WEB地址>
+				<编号>1</编号>
+				<URL>1232165456456</URL>
+			</WEB地址>
+		</WEB配置>
+		<Mqtt配置>
+			<网络编号 ID = "1">
+				<IP地址>192.168.1.13</IP地址>
+				<端口号>1883</端口号>
+				<订阅>
+					<主题 topical = "A" variable = "variable_name"/>
+					<主题 topical = "B" variable = "variable_name"/>
+					<主题 topical = "C" variable = "variable_name"/>
+					<主题 topical = "D" variable = "variable_name"/>
+				</订阅>
+			</网络编号>
+		</Mqtt配置>
+		<伺服控制模式>
+			<模式类型 ID = "1">
+				<NOTE>快速定位模式</NOTE>
+				<OUTPUT>
+					<字节数>17</字节数>
+					<字节组合>
+					    <字节信息 key = "Contrlworld" note = "Contrlworld" byte = "2" type="U16" >
+						           <位信息 key = "Switchon" note = "Switch_on" bit = "0" />
+							   <位信息 key = "Poweron" note = "Power_enable" bit = "1" />
+							   <位信息 key = "Stop" note = "Quick_stop" bit = "2" />
+							   <位信息 key = "Operation" note = "Enable_operation" bit = "3" />
+						       	   <位信息 key = "Run" note = "New_set_point" bit = "4" />
+							   <位信息 key = "Immchange" note = "Change_set_immediately" bit = "5" />
+							   <位信息 key = "Absolute" note = "Absolute_relative" bit = "6" />
+							   <位信息 key = "Reset" note = "Restet_Fault" bit = "7" />
+							   <位信息 key = "Halt" note = "Halt" bit = "8" />
+							   <位信息 key = "Changepoint" note = "Change_on_set_point" bit = "9" />  
+						</字节信息>
+					    	<字节信息 key = "Model" note = "Model" byte = "1" type="I8"/>
+						<字节信息 key = "Trapos" note = "Traget_pos" byte = "4" type="I32" />
+						<字节信息 key = "Traspeed" note = "Traget_speed" byte = "4" type="U32" />
+						<字节信息 key = "Accel" note = "Accel" byte = "4" type="U32" />
+						<字节信息 key = "Decel" note = "Decel" byte = "4" type="U32" />
+					</字节组合>
+				</OUTPUT>
+				<INPUT>
+					<字节数>9</字节数>
+					<字节组合>
+						   <字节信息 key = "Errorcode" note = "Error_code" byte = "2" type="U16" />
+						   <字节信息 key = "Statusworld" note = "Statusworld" byte = "2" type="U16" >
+						       	   <位信息 key = "ReadySw" note = "Ready_Switch" bit = "0" />
+							   <位信息 key = "Switchedon" note = "Switched_on" bit = "1" />
+							   <位信息 key = "Operation" note = "Operation_enabled" bit = "2" />
+							   <位信息 key = "Fault" note = "Fault" bit = "3" />
+						           <位信息 key = "Voltage" note = "Voltage_enable" bit = "4" />
+							   <位信息 key = "Stop" note = "Quick_stop" bit = "5" />
+							   <位信息 key = "Switchondisabled" note = "Switch_on_disabled" bit = "6" />
+							   <位信息 key = "Warning" note = "Warning" bit = "7" />
+							   <位信息 key = "Remote" note = "Remote" bit = "9" />  
+							   <位信息 key = "Inp" note = "Inp" bit = "10" />
+							   <位信息 key = "Internallimit" note = "Internal_limit" bit = "11" />
+							   <位信息 key = "Setpointacknowledge" note = "Set_point_acknowledge" bit = "12" />
+							   <位信息 key = "Following" note = "Following" bit = "13" />  
+
+						</字节信息>
+				    		<字节信息 key = "Model" note = "Model" byte = "1" type="I8"/>
+						<字节信息 key = "Curpos" note = "Current_pos" byte = "4" type="I32" />
+					</字节组合>
+				</INPUT>
+			</模式类型>
+			<模式类型 ID = "2">  
+				<NOTE>扭矩模式</NOTE>
+				<OUTPUT>
+					<字节数>15</字节数>
+					<字节组合>
+					    <字节信息 key = "Contrlworld" note = "Contrlworld" byte = "2" type="U16" >
+						           <位信息 key = "Switchon" note = "Switch_on" bit = "0" />
+							   <位信息 key = "Poweron" note = "Power_enable" bit = "1" />
+							   <位信息 key = "Stop" note = "Quick_stop" bit = "2" />
+							   <位信息 key = "Operation" note = "Enable_operation" bit = "3" />
+						       	   <位信息 key = "Run" note = "New_set_point" bit = "4" />
+							   <位信息 key = "Immchange" note = "Change_set_immediately" bit = "5" />
+							   <位信息 key = "Absolute" note = "Absolute_relative" bit = "6" />
+							   <位信息 key = "Restet" note = "Restet_Fault" bit = "7" />
+							   <位信息 key = "Halt" note = "Halt" bit = "8" />
+							   <位信息 key = "Changepoint" note = "Change_on_set_point" bit = "9" />  
+						</字节信息>
+					    	<字节信息 key = "Model" note = "Model" byte = "1" type="I8"/>
+						<字节信息 key = "Tratq" note = "Traget_torque" byte = "2" type="I16" />     <!--目标扭矩-->
+						<字节信息 key = "Traspeed" note = "Traget_speed" byte = "4" type="U32" />   <!--目标速度-->
+						<字节信息 key = "Accel" note = "Accel" byte = "4" type="U32" />
+						<字节信息 key = "Decel" note = "Decel" byte = "4" type="U32" />
+					</字节组合>
+				</OUTPUT>
+				<INPUT>
+					<字节数>7</字节数>
+					<字节组合>
+						   <字节信息 key = "Errorcode" note = "Error_code" byte = "2" type="U16" />
+						   <字节信息 key = "Statusworld" note = "Statusworld" byte = "2" type="U16" >
+						       	   <位信息 key = "ReadySw" note = "Ready_Switch" bit = "0" />
+							   <位信息 key = "Switchedon" note = "Switched_on" bit = "1" />
+							   <位信息 key = "Operation" note = "Operation_enabled" bit = "2" />
+							   <位信息 key = "Fault" note = "Fault" bit = "3" />
+						           <位信息 key = "Voltage" note = "Voltage_enable" bit = "4" />
+							   <位信息 key = "Stop" note = "Quick_stop" bit = "5" />
+							   <位信息 key = "Switchondisabled" note = "Switch_on_disabled" bit = "6" />
+							   <位信息 key = "Warning" note = "Warning" bit = "7" />
+							   <位信息 key = "Remote" note = "Remote" bit = "9" />  
+							   <位信息 key = "Inp" note = "Inp" bit = "10" />
+							   <位信息 key = "Internallimit" note = "Internal_limit" bit = "11" />
+							   <位信息 key = "Setpointacknowledge" note = "Set_point_acknowledge" bit = "12" />
+							   <位信息 key = "Following" note = "Following" bit = "13" />  
+
+						</字节信息>
+				    		<字节信息 key = "Model" note = "Model" byte = "1" type="I8"/>  
+						<字节信息 key = "Curtq" note = "Current_tq" byte = "2" type="I16" />      <!--实时扭矩-->
+					</字节组合>
+				</INPUT>
+			</模式类型>
+			<模式类型 ID = "8">
+				<NOTE>插补模式</NOTE>
+				<OUTPUT>
+					<字节数>19</字节数>
+					<字节组合>
+						<字节信息 key = "Contrlworld" note = "Contrlworld" byte = "2" type="U16" >
+							<位信息 key = "Switchon" note = "Switch_on" bit = "0" />
+							<位信息 key = "Poweron" note = "Power_enable" bit = "1" />
+							<位信息 key = "Stop" note = "Quick_stop" bit = "2" />
+							<位信息 key = "Operation" note = "Enable_operation" bit = "3" />
+							<位信息 key = "Run" note = "New_set_point" bit = "4" />
+							<位信息 key = "Immchange" note = "Change_set_immediately" bit = "5" />
+							<位信息 key = "Absolute" note = "Absolute_relative" bit = "6" />
+							<位信息 key = "Reset" note = "Restet_Fault" bit = "7" />
+							<位信息 key = "Halt" note = "Halt" bit = "8" />
+							<位信息 key = "Changepoint" note = "Change_on_set_point" bit = "9" />  
+						</字节信息>
+						<字节信息 key = "Model" note = "Model" byte = "1" type="I8"/>
+						<字节信息 key = "Trapos" note = "Traget_pos" byte = "4" type="I32" />
+						<字节信息 key = "Traspeed" note = "Traget_speed" byte = "4" type="U32" />
+						<字节信息 key = "Accel" note = "Accel" byte = "4" type="U32" />
+						<字节信息 key = "Decel" note = "Decel" byte = "4" type="U32" />
+					</字节组合>
+				</OUTPUT>
+				<INPUT>
+					<字节数>9</字节数>
+					<字节组合>
+						<字节信息 key = "Errorcode" note = "Error_code" byte = "2" type="U16" />
+						<字节信息 key = "Statusworld" note = "Statusworld" byte = "2" type="U16" >
+							<位信息 key = "ReadySw" note = "Ready_Switch" bit = "0" />
+							<位信息 key = "Switchedon" note = "Switched_on" bit = "1" />
+							<位信息 key = "Operation" note = "Operation_enabled" bit = "2" />
+							<位信息 key = "Fault" note = "Fault" bit = "3" />
+						 	<位信息 key = "Voltage" note = "Voltage_enable" bit = "4" />
+							<位信息 key = "Stop" note = "Quick_stop" bit = "5" />
+							<位信息 key = "Switchondisabled" note = "Switch_on_disabled" bit = "6" />
+							<位信息 key = "Warning" note = "Warning" bit = "7" />
+							<位信息 key = "Remote" note = "Remote" bit = "9" />  
+							<位信息 key = "Inp" note = "Inp" bit = "10" />
+							<位信息 key = "Internallimit" note = "Internal_limit" bit = "11" />
+							<位信息 key = "Setpointacknowledge" note = "Set_point_acknowledge" bit = "12" />
+							<位信息 key = "Following" note = "Following" bit = "13" />  
+						</字节信息>
+				    		<字节信息 key = "Model" note = "Model" byte = "1" type="I8"/>
+						<字节信息 key = "Curpos" note = "Current_pos" byte = "4" type="I32" />
+					</字节组合>
+				</INPUT>
+			</模式类型>
+		</伺服控制模式>
+		<OUTPUT>
+			<IO部分>
+				<ID>Q0</ID>
+				<类型>EC</类型>
+				<字节数>4</字节数>
+			</IO部分>
+			<伺服部分>
+			    <ID>J1</ID>
+				<极限原点>E1.0</极限原点>
+				<原点极限>E1.0</原点极限> <!--新增原点极限节点 可以容纳LE E等硬IO 及软IO 回原点的模式为2用此极限-->
+				<极限终点>E1.7</极限终点>
+				<起始软极限>-1000</起始软极限>
+				<终点软极限>20000</终点软极限>
+				<速度系数>1000</速度系数>
+				<加减速系数>50</加减速系数>
+				<偏差>200</偏差>
+				<模式>8</模式>
+			</伺服部分>
+			<伺服部分>
+			    <ID>J2</ID>
+				<极限原点>E1.0</极限原点>
+				<原点极限>E1.0</原点极限>
+				<极限终点>E1.7</极限终点>
+				<起始软极限>10</起始软极限>
+				<终点软极限>20000</终点软极限>
+				<速度系数>1000</速度系数>
+				<加减速系数>50</加减速系数>
+				<偏差>200</偏差>
+				<模式>8</模式>
+			</伺服部分>
+			<伺服部分>
+			    <ID>J3</ID>
+				<极限原点>E1.0</极限原点>
+				<原点极限>E1.0</原点极限>
+				<极限终点>E1.7</极限终点>
+				<起始软极限>10</起始软极限>
+				<终点软极限>20000</终点软极限>
+				<导程>20</导程>
+				<模式>8</模式>
+			</伺服部分>
+			<伺服部分>
+			    <ID>y4</ID>
+				<极限原点>E1.0</极限原点>
+				<原点极限>E1.0</原点极限>
+				<极限终点>E1.7</极限终点>
+				<起始软极限>10</起始软极限>
+				<终点软极限>20000</终点软极限>
+				<速度系数>1000</速度系数>
+				<加减速系数>50</加减速系数>
+				<偏差>200</偏差>
+				<模式>2</模式>          <!--扭矩模式(新增)-->
+			</伺服部分>
+			<IO部分>
+				<ID>Q1</ID>
+				<类型>EC</类型>
+				<字节数>1</字节数>
+			</IO部分>
+		</OUTPUT>
+
+		<INPUT>
+			<伺服部分>
+				<ID>J1</ID>
+				<模式>8</模式>
+			</伺服部分>
+			<伺服部分>
+				<ID>J2</ID>
+				<模式>8</模式>
+			</伺服部分>
+			<伺服部分>
+				<ID>J3</ID>
+				<模式>8</模式>
+			</伺服部分>
+			<IO部分>
+				<ID>E0</ID>
+				<类型>EC</类型>
+				<字节数>1</字节数>
+			</IO部分>
+			<IO部分>
+				<ID>E1</ID>
+				<类型>EC</类型>
+				<字节数>1</字节数>
+			</IO部分>
+		
+		</INPUT>
+  		<坐标系配置>  <!--插补模式坐标系(新增)UI界面-->
+			<坐标 ID = "X坐标">
+                                <起点极限>00.000</起点极限>
+				<终点极限>3000.000</终点极限>
+				　<轴臂>
+					<轴臂信息>
+							<ID>J1</ID>
+							<臂长>100.00</臂长>
+							<减速比>1.0</减速比>
+							<电子齿轮比>200.0</电子齿轮比>
+					</轴臂信息>
+					<轴臂信息>
+							<ID>J2</ID>
+							<臂长>100.0</臂长>
+							<减速比>1.0</减速比>
+							<电子齿轮比>200.0</电子齿轮比>
+					</轴臂信息>
+　　　　　				</轴臂>
+　　　　　　　　　　　　　　　　　　　　　　　</坐标>
+			<坐标 ID = "Y坐标">
+                                 <起点极限>0.000</起点极限>
+				 <终点极限>3000.000</终点极限>
+				　<轴臂>
+  					 <轴臂信息>
+							<ID>J1</ID>
+							<臂长>100.00</臂长>
+							<减速比>1.0</减速比>
+							<电子齿轮比>200.0</电子齿轮比>
+					</轴臂信息>
+					<轴臂信息>
+							<ID>J2</ID>
+							<臂长>100.0</臂长>
+							<减速比>1.0</减速比>
+							<电子齿轮比>200.0</电子齿轮比>
+					</轴臂信息>
+　　　　　				</轴臂>
+　　　　　　　　　　　　　　　　　　　　　　　</坐标>
+			<坐标 ID = "Z坐标">
+                                 <起点极限>0.000</起点极限>
+				 <终点极限>3000.000</终点极限>
+				　<轴臂>
+       					<轴臂信息>
+							<ID>J3</ID>
+							<臂长>100.0</臂长>
+							<减速比>1.0</减速比>
+							<电子齿轮比>200.0</电子齿轮比>
+					</轴臂信息>
+　　　　　				</轴臂>
+　　　　　　　　　　　　　　　　　　　　　　　</坐标>
+			<坐标 ID = "U坐标">
+                                 <起点极限>0.000</起点极限>
+				 <终点极限>3000.000</终点极限>
+				　<轴臂>
+       					<轴臂信息>
+							<ID>J3</ID>
+							<臂长>100.0</臂长>
+							<减速比>1.0</减速比>
+							<电子齿轮比>200.0</电子齿轮比>
+					</轴臂信息>
+　　　　　				</轴臂>
+　　　　　　　　　　　　　　　　　　　　　　　</坐标>
+			<坐标 ID = "V坐标">
+                                 <起点极限>0.000</起点极限>
+				 <终点极限>3000.000</终点极限>
+				　<轴臂>
+       					<轴臂信息>
+							<ID>J4</ID>
+							<臂长>100.0</臂长>
+							<减速比>1.0</减速比>
+							<电子齿轮比>200.0</电子齿轮比>
+					</轴臂信息>
+　　　　　				</轴臂>
+　　　　　　　　　　　　　　　　　　　　　　　</坐标>
+			<坐标 ID = "W坐标">
+                                 <起点极限>0.000</起点极限>
+				 <终点极限>3000.000</终点极限>
+				　<轴臂>
+       					<轴臂信息>
+							<ID>J5</ID>
+							<臂长>100.0</臂长>
+							<减速比>1.0</减速比>
+							<电子齿轮比>200.0</电子齿轮比>
+					</轴臂信息>
+　　　　　				</轴臂>
+　　　　　　　　　　　　　　　　　　　　　　　</坐标>
+		</坐标系配置>
+	</硬件配置>
+</data> 

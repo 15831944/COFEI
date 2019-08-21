@@ -1,0 +1,92 @@
+#include "shape.h"
+
+Segment::Segment()
+{
+    file = "";
+    points = NULL;
+}
+
+Segment::~Segment()
+{
+    delete points;
+}
+
+QVector<Point> * Segment::get_profile(QString & err)
+{
+    if (NULL == points) {
+        points = new QVector<Point>;
+        if (!points) {
+            err = file + ": memory allocate fail.";
+            return NULL;
+        }
+        if (!read(err))
+            return NULL;
+    }
+
+    err = "";
+    return points;
+}
+
+bool Segment::read(QString & err)
+{
+    points->clear();
+
+    Point p;
+    std::string str;
+    std::string f = this->file.toStdString();
+    std::fstream file(f);
+
+    str = "";
+    while ( !file.eof() )
+    {
+        std::getline(file, str);
+        std::stringstream strin(str);
+
+        // to do better
+        strin >> p.x >> p.y >> p.z;
+        points->push_back(p);
+    }
+
+    err = "";
+    return true;
+}
+
+void Segment::set_file(QString file)
+{
+    this->file = file;
+}
+
+QString Segment::get_file() const
+{
+    return this->file;
+}
+
+void Segment::set_type(ShapeType type)
+{
+    this->type = type;
+}
+
+ShapeType Segment::get_type() const
+{
+    return type;
+}
+
+void Segment::set_start(Point start)
+{
+    this->start = start;
+}
+
+Point Segment::get_start() const
+{
+    return start;
+}
+
+void Segment::set_end(double end)
+{
+    this->end = end;
+}
+
+double Segment::get_end() const
+{
+    return end;
+}

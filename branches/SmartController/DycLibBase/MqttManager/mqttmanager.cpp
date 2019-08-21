@@ -1,0 +1,91 @@
+#include "mqttmanager.h"
+#include <QStandardPaths>
+#include <QDir>
+#include <MyComm_Shared.h>
+#include <MyConfig_Shared>
+#include <QMutexLocker>
+#include <QFile>
+#include <QIODevice>
+#include <QObject>
+#include <QDebug>
+MqttManager::MqttManager()
+{
+    m_pClient = new QMqttClient();
+    m_topical_map.clear();
+    temppath = QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/用户文件夹" + "/Data/";
+    QDir dir;
+    if(!dir.exists(temppath))
+    {
+        dir.mkdir(temppath);
+    }
+}
+
+MqttManager::~MqttManager()
+{
+    if(m_pClient)
+        delete m_pClient;
+}
+
+bool MqttManager::Mqtt_Client_Init(const QString ip, const QString port, const QMap<QString, QString> topical_resive_map)
+{
+    if(m_pClient)
+    {
+        m_pClient->setHostname(ip);
+        m_pClient->setPort(port.toInt());
+        connect(m_pClient, &QMqttClient::disconnected, this, &MqttManager::brokerDisconnected);
+
+        connect(m_pClient, &QMqttClient::messageReceived, this, &MqttManager::Message_resive);
+        m_pClient->connectToHost();
+        m_topical_map = topical_resive_map;
+        connect(this,&MqttManager::mqtt_send_signal,this,&MqttManager::Client_push);
+    }
+    else
+        return false;
+    return true;
+}
+
+void MqttManager::brokerDisconnected()
+{
+   emit broker_disconnected();
+    qDebug()<<"lib_message disconnected form server";
+}
+
+void MqttManager::Message_resive(const QByteArray &message, const QMqttTopicName &topic)
+{
+    qDebug()<<topic.name()<<" :"<<message;
+    if(m_topical_map.contains(topic.name()))
+    {
+        QMutexLocker locker(&DBInstanceManager::getDBInstance()->m_mutex);
+        QString str = message;
+        memcpy(DBInstanceManager::getDBInstance()->DBVarStru.regtextMap[m_topical_map[topic.name()]].textval ,str.toStdString().c_str(),64);
+        Save_reive_info(topic.name(),message);
+    }
+}
+
+void MqttManager::Save_reive_info(QString path,QString msg)
+{
+    QFile file(temppath + path +".txt");
+    if(file.open(QIODevice::Append))
+    {
+        file.write(msg.toLatin1());
+    }
+    file.close();
+}
+
+void MqttManager::Client_push(QString topic, QByteArray msg_buff, bool result)
+{
+    result = true;
+    if(m_pClient->publish(topic,msg_buff) == -1)
+        result =  false;
+}
+
+bool MqttManager::Subscribe()
+{
+    for(auto it = m_topical_map.begin();it != m_topical_map.end();it++)
+    {
+        auto topical_result = m_pClient->subscribe(it.key());
+        if(!topical_result)
+            return false;
+    }
+    return true;
+}

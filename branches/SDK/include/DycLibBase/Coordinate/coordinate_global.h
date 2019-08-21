@@ -1,0 +1,12 @@
+#ifndef COORDINATE_GLOBAL_H
+#define COORDINATE_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(COORDINATE_LIBRARY)
+#  define COORDINATESHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define COORDINATESHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // COORDINATE_GLOBAL_H

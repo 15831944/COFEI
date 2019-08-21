@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/line/StyleCustomDashLine.png</file>
+        <file>images/line/StyleDashDotDotLine.png</file>
+        <file>images/line/StyleDashDotLine.png</file>
+        <file>images/line/StyleDashLine.png</file>
+        <file>images/line/StyleDotLine.png</file>
+        <file>images/line/StyleNoPen.png</file>
+        <file>images/line/StyleSolidLine.png</file>
+    </qresource>
+</RCC>

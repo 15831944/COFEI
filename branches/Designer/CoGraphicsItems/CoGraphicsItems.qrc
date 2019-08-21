@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/checked-white.png</file>
+        <file>Images/radiobuttonchecked-white.png</file>
+        <file>Images/radiobuttonuncheck-white.png</file>
+        <file>Images/select-white.png</file>
+        <file>Images/unchecked-white.png</file>
+        <file>Images/Up.png</file>
+        <file>Images/Down.png</file>
+        <file>Images/checked-grey.png</file>
+        <file>Images/Down-grey.png</file>
+        <file>Images/radiobuttonchecked-grey.png</file>
+        <file>Images/radiobuttonuncheck-grey.png</file>
+        <file>Images/select-grey.png</file>
+        <file>Images/unchecked-grey.png</file>
+        <file>Images/Up-grey.png</file>
+        <file>Images/tree-arrow-right.png</file>
+        <file>Images/tree-arrow-down.png</file>
+        <file>Images/cowain.png</file>
+        <file>Images/Cow.png</file>
+        <file>Images/go.ico</file>
+        <file>Images/background.jpeg</file>
+        <file>Images/back6.png</file>
+        <file>Images/logout.ico</file>
+        <file>Images/search.png</file>
+    </qresource>
+</RCC>

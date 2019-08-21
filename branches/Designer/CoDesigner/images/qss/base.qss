@@ -1,0 +1,180 @@
+QWigdet{
+    background-color: transparent;
+}
+ QLineEdit {
+    border-style: solid;
+    border: 2px solid lightgray;
+    border-radius: 8px;
+}
+/* ******************QTreeWidget****************** */
+QTreeWidget {
+   font-size:15px;
+    color: white;
+    background-color: rgb(69, 187, 217);
+}
+QTreeWidget::item{
+margin:13px;
+background: rgb(69, 187, 217);
+background-clip: margin;
+}
+
+QTreeWidget::branch{
+        background:rgb(63, 147, 168);
+} 
+QTreeView::item:hover {
+    background: rgb(63, 187, 217);;
+}
+
+QTreeView::item:selected:active{
+    background: rgb(63, 147, 168);
+}
+
+QTreeView::item:selected:!active {
+    background: rgb(63, 147, 168);
+}
+
+
+QTreeWidget::branch:closed:has-children:!has-siblings,
+QTreeWidget::branch:closed:has-children:has-siblings {
+    border-image: none;
+    image: url(:/images/add.png);
+}
+
+QTreeWidget::branch:closed:has-children:!has-siblings,
+QTreeWidget::branch:closed:has-children:has-siblings:hover {
+    border-image: none;
+    image: url(:/images/add.png);
+}
+
+QTreeWidget::branch:open:has-children:!has-siblings,
+QTreeWidget::branch:open:has-children:has-siblings  {
+    border-image: none;
+    image: url(:/images/minus.png);
+}
+QTreeWidget::branch:open:has-children:!has-siblings,
+QTreeWidget::branch:open:has-children:has-siblings:hover  {
+    border-image: none;
+    image: url(:/images/minus.png);
+}
+
+/* ******************QTreeWidget****************** */
+
+
+QToolButton{
+/*
+min-width:80px;
+min-height:32px;*/
+background-color: transparent;
+}
+
+QToolButton:hover{
+color: rgb(255,255,0);
+min-height:20;
+border-style:solid;
+border-top-left-radius:2px;
+border-top-right-radius:2px;
+background-color:qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 rgba(226,236,241,255),stop:1 rgba(120,120,120,255));
+border:1px;border-radius:5px;padding:2px 4px;
+}
+
+QToolButton:pressed{
+color: rgb(255,0,255);
+min-height:20;
+border-style:solid;
+border-top-left-radius:2px;
+border-top-right-radius:2px;
+background-color:qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 rgba(226,236,241,255),stop:1 rgba(160,160,0,255));
+border:1px;
+border-radius:5px;padding:2px4px;
+}
+
+QScrollBar:vertical
+{width:15px;
+background:rgba(61,61,61,100%);
+margin:0px,0px,0px,0px;
+padding-top:20px;
+padding-bottom:20px;
+}
+QScrollBar::handle:vertical
+{width:7px;
+background:rgba(70,70,70,100%);
+border-radius:6px;
+min-height:20;
+}
+QScrollBar::handle:vertical:hover
+{width:7px;
+background:rgba(85,85,85,100%);
+border-radius:6px;
+min-height:20;
+}
+QScrollBar::add-line:vertical
+{height:20px;
+width:20px;
+border-image:url(:/images/skin/ball/down.png);
+subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical
+
+{height:20px;width:20px;
+border-image:url(:/images/skin/ball/up.png);
+subcontrol-position:top;
+}
+QScrollBar::add-line:vertical:hover
+{height:20px;
+width:20px;
+border-image:url(:/images/skin/ball/down-1.png);
+subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical:hover
+{height:20px;width:20px;
+border-image:url(:/images/skin/ball/up-1.png);
+subcontrol-position:top;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{background:rgba(0,0,0,10%);
+border-radius:4px;
+}
+QScrollBar:horizontal
+{height:15px;
+background:rgba(50,50,50,100%);
+margin:0px,0px,0px,0px;
+padding-left:20px;
+padding-right:20px;
+}
+QScrollBar::handle:horizontal
+{width:8px;
+background:rgba(70,70,70,100%);
+border-radius:6px;
+min-height:20;
+}
+QScrollBar::handle:horizontal:hover
+{width:8px;
+background:rgba(85,85,85,100%);
+border-radius:6px;
+min-height:20;
+}
+QScrollBar::add-line:horizontal
+{height:20px;width:20px;
+border-image:url(:/images/skin/ball/right.png);
+subcontrol-position:right;
+}
+QScrollBar::sub-line:horizontal
+{height:20px;width:20px;
+border-image:url(:/images/skin/ball/left.png);
+subcontrol-position:left;
+}
+QScrollBar::add-line:horizontal:hover
+{height:20px;width:20px;
+border-image:url(:/images/skin/ball/right-1.png);
+subcontrol-position:right;
+}
+QScrollBar::sub-line:horizontal:hover
+{height:20px;width:20px;
+border-image:url(:/images/skin/ball/left-1.png);
+subcontrol-position:left;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{background:rgba(0,0,0,10%);
+border-radius:4px;
+}
+

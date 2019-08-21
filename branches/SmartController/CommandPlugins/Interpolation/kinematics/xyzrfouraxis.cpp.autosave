@@ -1,0 +1,6 @@
+#include "xyzrfouraxis.h"
+
+XyzrFourAxisFK::XyzrFourAxisFK()
+{
+
+}

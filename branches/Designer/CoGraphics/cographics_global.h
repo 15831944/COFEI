@@ -1,0 +1,12 @@
+#ifndef COGRAPHICS_GLOBAL_H
+#define COGRAPHICS_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(COGRAPHICS_LIBRARY)
+#  define COGRAPHICSSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define COGRAPHICSSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // COGRAPHICS_GLOBAL_H

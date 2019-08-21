@@ -1,0 +1,69 @@
+#ifndef MYCONFIG_SHARED_H
+#define MYCONFIG_SHARED_H
+#include <QString>
+#include <Comm.h>
+#include <funmoduleinterface.h>
+#include <QMutex>
+#define CTLogModule  "计时"
+class ConfigData
+{
+private:
+    ConfigData()
+    {
+        hwIOMap.clear();
+        pluginMap.clear();
+        childPluginMap.clear();
+        iSpeed = 0;
+        iAccel = 0;
+        iDccel = 0;
+        icspSpeed = 1;
+        icspAccel = 1;
+        m_tpPos = "(1;1;1)";
+	L_state = 0;
+        m_cusTime = 0;
+        productCount = 0;
+        productTotal = 100;
+        productTempTotal = 100;
+        m_CspStopFalg.clear();
+        m_flowStopFalg.clear();
+        for(int i = 0;i <16;++i)
+        {
+            QString strkey = QString("%1").arg(i);
+            int lstate = 0;
+            m_LStateMap.insert(strkey,lstate);
+        }
+    }
+
+public:
+    static ConfigData *GetInstance()
+    {
+        static ConfigData pInstance;
+
+        return &pInstance;
+    }
+    uint iSpeed;
+    uint iAccel;
+    uint iDccel;
+    uint icspSpeed;
+    uint icspAccel;
+    uchar speedRate;
+    uint productCount;
+    uint productTolCount;
+    uint productTotal;
+    uint productTempTotal;
+    ushort L_state;
+    QString m_tpPos;
+    int m_cusTime;
+    QMap<QString,ushort> m_CspStopFalg;
+    QMap<QString,ushort> m_LStateMap;
+    XmlStru xmlMap;
+    QMap<QString,HWCONFIGXML_IO_STRU> hwIOMap;
+    QMap<QString,FunModuleInterface*> pluginMap;
+    QMap<QString,QMap<QString,FunModuleInterface*>> childPluginMap;
+    QMutex m_mutex;
+    QMap<QString,bool> m_flowStopFalg;
+};
+
+
+
+#endif

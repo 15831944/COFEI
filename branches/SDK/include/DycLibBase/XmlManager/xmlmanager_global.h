@@ -1,0 +1,12 @@
+#ifndef XMLMANAGER_GLOBAL_H
+#define XMLMANAGER_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(XMLMANAGER_LIBRARY)
+#  define XMLMANAGERSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define XMLMANAGERSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // XMLMANAGER_GLOBAL_H

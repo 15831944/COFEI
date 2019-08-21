@@ -1,0 +1,78 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>skin/images/QFramer.png</file>
+        <file>skin/ball/green.png_press</file>
+        <file>skin/ball/green.png_hover</file>
+        <file>skin/ball/green.png</file>
+        <file>skin/ball/Hustler_005.png</file>
+        <file>skin/icons/light/appbar.control.play.png</file>
+        <file>skin/icons/light/appbar.control.resume.png</file>
+        <file>skin/icons/light/appbar.control.stop.png</file>
+        <file>skin/icons/light/appbar.close.png</file>
+        <file alias="test">skin/ball/Hustler_006.png</file>
+        <file>skin/ball/Hustler_007.png</file>
+        <file>skin/images/rectangle.png</file>
+        <file>skin/images/rectangle.png_press</file>
+        <file>skin/images/rectangle.png_hover</file>
+        <file alias="Exe.ico">skin/icons/Exe.ico</file>
+        <file>skin/ball/debug-0.png</file>
+        <file>skin/ball/debug-0.png_press</file>
+        <file>skin/ball/debug-0.png_hover</file>
+        <file>skin/ball/fly.png</file>
+        <file>skin/ball/mainui-0.png</file>
+        <file>skin/ball/mainui-0.png_press</file>
+        <file>skin/ball/mainui-0.png_hover</file>
+        <file>skin/ball/monitor-0.png</file>
+        <file>skin/ball/monitor-0.png_press</file>
+        <file>skin/ball/monitor-0.png_hover</file>
+        <file>skin/ball/other-0.png</file>
+        <file>skin/ball/other-0.png_press</file>
+        <file>skin/ball/other-0.png_hover</file>
+        <file alias="scrollTitle">skin/ball/title.ico</file>
+        <file alias="ORG">skin/Axis/ORG_0c.png</file>
+        <file alias="ORG_press">skin/Axis/ORG-1.png</file>
+        <file alias="FixPos">skin/Axis/cpos-0.png</file>
+        <file alias="FixPos_press">skin/Axis/cpos-1.png</file>
+        <file alias="reset">skin/Axis/cRESET-0.png</file>
+        <file alias="reset_press">skin/Axis/cRESET-1.png</file>
+        <file alias="right">skin/Axis/cright-0.png</file>
+        <file alias="right_press">skin/Axis/cright-1.png</file>
+        <file alias="son">skin/Axis/cS_ON-0.png</file>
+        <file alias="son_press">skin/Axis/cS-ON-1.png</file>
+        <file alias="stop">skin/Axis/cstop-0.png</file>
+        <file alias="stop_press">skin/Axis/cstop-1.png</file>
+        <file alias="ok">skin/Axis/czhengchang-1.png</file>
+        <file alias="left">skin/Axis/cZUO-0.png</file>
+        <file alias="left_press">skin/Axis/cZUO-1.png</file>
+        <file alias="error">skin/Axis/err-1.png</file>
+        <file alias="show">skin/ball/ShowUI.png</file>
+        <file alias="Reset">skin/icons/light/appbar.reset1.png</file>
+        <file alias="switchOff">skin/images/switchOff.png</file>
+        <file alias="switchOn">skin/images/switchOn.png</file>
+        <file>skin/icons/light/appbar.control.pause.png</file>
+        <file>skin/icons/light/user.png</file>
+        <file>skin/icons/light/lock.png</file>
+        <file>skin/images/font.bmp</file>
+        <file alias="userlock">skin/images/userlock.png</file>
+        <file alias="userunlock">skin/images/userunlock.png</file>
+        <file alias="origin">skin/images/origin</file>
+        <file>skin/ball/down-1.png</file>
+        <file>skin/ball/down.png</file>
+        <file>skin/ball/left-1.png</file>
+        <file>skin/ball/left.png</file>
+        <file>skin/ball/right-1.png</file>
+        <file>skin/ball/right.png</file>
+        <file>skin/ball/up-1.png</file>
+        <file>skin/ball/up.png</file>
+        <file alias="balboa">skin/images/balboa.jpg</file>
+        <file alias="init">skin/images/init.png</file>
+        <file alias="pass">skin/images/pass.png</file>
+        <file alias="ready">skin/images/ready.png</file>
+        <file alias="start">skin/images/start.png</file>
+        <file alias="unuse">skin/images/unuse.png</file>
+        <file alias="clear">skin/images/clear.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file alias="checkbox">skin/qss/Checkbox.qss</file>
+    </qresource>
+</RCC>

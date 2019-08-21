@@ -1,0 +1,12 @@
+#ifndef COACTION_GLOBAL_H
+#define COACTION_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(COACTION_LIBRARY)
+#  define COACTIONSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define COACTIONSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // COACTION_GLOBAL_H

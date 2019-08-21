@@ -1,0 +1,55 @@
+QTreeWidget{
+    background-color: #5B677A;
+
+    /* set the font properties*/
+    font-size:17px;
+    color: white;
+}
+
+QTreeWidget::item{
+    margin:13px;
+    background: #5B677A;
+    background-clip: margin;
+}
+
+
+QTreeWidget::branch{
+    background:#5B677A;
+    }
+
+
+QTreeView::item:hover {
+    background: rgb(69, 187, 217);;
+}
+
+QTreeView::item:selected:active{
+    background: rgb(63, 147, 168);
+}
+
+QTreeView::item:selected:!active {
+    background: rgb(63, 147, 168);
+}
+
+
+QTreeWidget::branch:closed:has-children:!has-siblings,
+QTreeWidget::branch:closed:has-children:has-siblings {
+    border-image: none;
+    image: url(:/image/plus.png);
+}
+
+
+QTreeWidget::branch:open:has-children:!has-siblings,
+QTreeWidget::branch:open:has-children:has-siblings  {
+    border-image: none;
+    image: url(:/image/minus.png);
+}
+
+QTreeWidget::branch:!has-children:has-siblings:adjoins-item{
+    border-image:none;
+    image:url(:/image/test.png);
+    }
+
+QTreeWidget::branch:!has-children:!has-siblings:adjoins-item{
+    border-image:none;
+    image:url(:/image/test.png);
+    }

@@ -1,0 +1,12 @@
+#ifndef MAINFRAME_GLOBAL_H
+#define MAINFRAME_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(MAINFRAME_LIBRARY)
+#  define MAINFRAMESHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define MAINFRAMESHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // MAINFRAME_GLOBAL_H
